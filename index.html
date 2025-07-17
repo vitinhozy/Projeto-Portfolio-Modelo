@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -21,7 +20,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <h1>Tainná Lobo</h1>
         <p>Modelo e Miss</p>
@@ -34,7 +32,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="section-title">
             <h2>Biografia</h2>
@@ -65,7 +62,6 @@
         </div>
     </section>
 
-    <!-- Beauty Section -->
     <section id="beauty" class="beauty">
         <div class="section-title">
             <h2>Beauty</h2>
@@ -101,12 +97,18 @@
                 <div class="overlay">
                 </div>
             </div>
-            
-            
-        </div>
+            <div class="gallery-item">
+                <img src="/imgs/66dba822-020a-4b16-a7f7-cee8b8c07a20 (1).jpeg" alt="Beauty 4">
+                <div class="overlay">
+                </div>    
+            </div>
+             <div class="gallery-item">
+                <img src="/imgs/1c957885-0103-4d1b-8f01-de749a30f6ff (1).jpeg" alt="Beauty 4">
+                <div class="overlay">
+                </div>    
+            </div>
     </section>
 
-    <!-- Measurements Section -->
     <section id="measurements" class="measurements">
         <div class="section-title">
             <h2>Minhas Medidas</h2>
@@ -119,7 +121,7 @@
                     <li><strong>Altura:</strong> 1.63m</li>
                     <li><strong>Busto:</strong> 84cm</li>
                     <li><strong>Cintura:</strong> 63cm</li>
-                    <li><strong>Quadril:</strong> 95cm</li>
+                    <li><strong>Quadril:</strong> 93cm</li>
                 </ul>
             </div>
             <div class="measurement-item">
@@ -142,7 +144,6 @@
             </div>
     </section>
 
-    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="section-title">
             <h2>Ensaios Fotográficos</h2>
@@ -169,7 +170,7 @@
                 </div>
             </div>
     </section>
-<!-- section 2 -->
+
     <section id="portfolio" class="portfolio">
         <div class="section-title">
             <h2>Ensaios Fotográficos</h2>
@@ -239,7 +240,6 @@
             </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="section-title">
             <h2>Entre em Contato</h2>
@@ -267,7 +267,6 @@
             </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-social">
@@ -278,52 +277,6 @@
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navbar links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Scroll down button
-        document.querySelector('.scroll-down').addEventListener('click', function() {
-            window.scrollBy({
-                top: window.innerHeight - 80,
-                behavior: 'smooth'
-            });
-        });
-
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.about-text, .profile-image, .measurements-grid, .gallery, .contact-info, .contact-form');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('animate');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    </script>
+<script src="./script/script.js"></script>
 </body>
 </html>
