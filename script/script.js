@@ -19,7 +19,7 @@
 
         document.querySelector('.scroll-down').addEventListener('click', function() {
             window.scrollBy({
-                top: window.innerHeight - 80,
+                top: window.innerHeight - 0,
                 behavior: 'smooth'
             });
         });
