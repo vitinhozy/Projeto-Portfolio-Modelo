@@ -310,6 +310,7 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease;
+    
 }
 
 .gallery.animate {
@@ -332,6 +333,17 @@
     height: auto;
     object-fit: cover;
     transition: all 0.5s ease;
+}
+.gallery-item.center-item {
+  grid-column: 1 / span 2;   /* ocupa as 2 colunas */
+  display: flex;             /* flex para centralizar */
+  justify-content: center;   /* centraliza horizontal */
+}
+
+.gallery-item.center-item img {
+  max-width: 400px;          /* controla o tamanho da foto */
+  width: 100%;
+  border-radius: 10px;
 }
 /* Opcional: ajuste para telas menores */
 @media (max-width: 900px) {
