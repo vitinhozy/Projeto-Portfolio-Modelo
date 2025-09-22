@@ -301,39 +301,40 @@
             font-size: 1.2rem;
         }
 
-        /* Gallery Sections */
+ /* Gallery Sections */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 367px); /* 2 colunas de 367px cada */
-    gap: 1.5rem;
-    justify-content: center; /* Centraliza o grid */
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-    
+  display: grid;
+  grid-template-columns: repeat(2, 367px); /* 2 colunas fixas no desktop */
+  gap: 1.5rem;
+  justify-content: center; /* Centraliza o grid */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
 }
 
 .gallery.animate {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
- .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 367px; /* Largura fixa */
-    height: 550px; /* Altura fixa */
-    transition: all 0.5s ease;
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 367px;  /* largura fixa no desktop */
+  height: 550px; /* altura fixa no desktop */
+  transition: all 0.5s ease;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: all 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
 }
+
+/* Foto centralizada ocupando as duas colunas */
 .gallery-item.center-item {
   grid-column: 1 / span 2;   /* ocupa as 2 colunas */
   display: flex;             /* flex para centralizar */
@@ -344,13 +345,34 @@
   max-width: 400px;          /* controla o tamanho da foto */
   width: 100%;
   border-radius: 10px;
+  height: auto;              /* não força altura */
 }
-/* Opcional: ajuste para telas menores */
-@media (max-width: 900px) {
-    .gallery {
-        grid-template-columns: 367px; /* 1 coluna em telas pequenas */
-    }
-} 
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr; /* só 1 coluna no mobile */
+  }
+
+  .gallery-item {
+    width: 100%;   /* ocupa toda a largura */
+    height: auto;  /* altura automática */
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-item.center-item {
+    grid-column: auto;        /* volta ao normal no mobile */
+    justify-content: center;
+  }
+
+  .gallery-item.center-item img {
+    max-width: 100%;          /* ocupa a largura da tela */
+  }
+}
 
 
         .gallery-item:hover {
